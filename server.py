@@ -3,7 +3,7 @@ import socket
 
 #host = 'flower-garden-2.herokuapp.com/'
 host = '127.0.0.1'
-port = 55555
+port = 443
 
 #setup server, then link host port info
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
