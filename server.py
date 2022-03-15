@@ -5,7 +5,7 @@ import os
 host = '0.0.0.0'
 #host = '127.0.0.1'
 #port = 14150
-port =  socket.htons(0)
+port =  socket.htons(14150)
 #host = socket.htonl(socket.INADDR_ANY)
 #port = int(os.environ.get('PORT'))
 
