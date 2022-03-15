@@ -67,4 +67,5 @@ def receive():
         thread.start()
 
 print("server is listening")
+print(port)
 receive()

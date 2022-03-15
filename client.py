@@ -4,7 +4,7 @@ import threading
 username = input("Enter Username: ")
 #host = '127.0.0.1'
 host = 'flower-garden-2.herokuapp.com'
-port = 443
+port = 80
 
 #setup client then connect to server
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
