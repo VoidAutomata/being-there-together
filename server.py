@@ -45,8 +45,9 @@ def receive():
         client, address = server.accept()
         print(f"{str(address)} has connected")
 
-        #get username from client
+        # sends keyphrase to client
         client.send('Enter Username:'.encode('ascii'))
+        # get username from client
         username = client.recv(1024).decode('ascii')
         clients.append(client)
         usernames.append(username)
@@ -59,3 +60,6 @@ def receive():
         #threading to manage multiple users
         thread = threading.Thread(target = handle, arge = (client,))
         thread.start()
+
+print("server is listening")
+receive()
