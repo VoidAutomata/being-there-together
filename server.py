@@ -1,8 +1,9 @@
 import threading
 import socket
 
-host = 'flower-garden-2.herokuapp.com/' #server host Heroku
-port = 443
+#host = 'flower-garden-2.herokuapp.com/'
+host = '127.0.0.1'
+port = 55555
 
 #setup server, then link host port info
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -58,7 +59,7 @@ def receive():
         client.send('Successfully connected to server.'.encode('ascii'))
 
         #threading to manage multiple users
-        thread = threading.Thread(target = handle, arge = (client,))
+        thread = threading.Thread(target = handle, args = (client,))
         thread.start()
 
 print("server is listening")

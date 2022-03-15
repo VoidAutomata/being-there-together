@@ -1,12 +1,13 @@
 import socket
 import threading
-import server
 
 username = input("Enter Username: ")
+host = '127.0.0.1'
+port = 55555
 
 #setup client then connect to server
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client.connect((server.host, server.port))
+client.connect((host, port))
 
 def receive():
     while True:
