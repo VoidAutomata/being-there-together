@@ -3,7 +3,7 @@ import threading
 
 username = input("Enter Username: ")
 #host = '127.0.0.1'
-host = 'flower-garden-2.herokuapp.com/'
+host = 'flower-garden-2.herokuapp.com'
 port = 443
 
 #setup client then connect to server

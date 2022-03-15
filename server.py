@@ -1,9 +1,13 @@
 import threading
 import socket
+import os
 
-#host = 'flower-garden-2.herokuapp.com/'
-host = '127.0.0.1'
-port = 443
+host = '0.0.0.0'
+#host = '127.0.0.1'
+#port = 14150
+port =  socket.htons(0)
+host = socket.htonl(socket.INADDR_ANY)
+#port = int(os.environ.get('PORT'))
 
 #setup server, then link host port info
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
