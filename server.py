@@ -68,7 +68,11 @@ def receive():
         username = client.recv(1024).decode('ascii')
         clients.append(client)
         usernames.append(username)
-        print(f'New client {username}')
+        if len(username) < 1:
+            print("ping from dyno")
+            continue
+        else:
+            print(f'New client {username}')
 
         #send message of new client
         broadcast(f'{username} has joined the chat.'.encode('ascii'))
