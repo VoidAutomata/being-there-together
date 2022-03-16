@@ -2,9 +2,10 @@ import socket
 import threading
 
 username = input("Enter Username: ")
-#host = '127.0.0.1'
-host = 'flower-garden-2.herokuapp.com'
-port = 17975
+host = '127.0.0.1'
+#host = 'flower-garden-3.herokuapp.com'
+port = 80
+#run proxy locally heroku ps:forward 80:<server port assigned by Heroku> --app=flower-garden-3
 
 #setup client then connect to server
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
