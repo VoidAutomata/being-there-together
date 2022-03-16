@@ -77,4 +77,5 @@ def receive():
 
 print("server is listening")
 print(port)
+print(ON_HEROKU)
 receive()
