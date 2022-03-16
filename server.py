@@ -8,7 +8,7 @@ if ON_HEROKU:
     # get the heroku port
     port = int(os.environ.get('PORT', 17995))  # as per OP comments default is 17995
 else:
-    port = 3000
+    port = 17975
 
 host = '0.0.0.0'
 #host = '127.0.0.1'
@@ -69,7 +69,10 @@ def receive():
 
         #send message of new client
         broadcast(f'{username} has joined the chat.'.encode('ascii'))
-        client.send('Successfully connected to server.'.encode('ascii'))
+        try:
+            client.send('Successfully connected to server.'.encode('ascii'))
+        except:
+            continue
 
         #threading to manage multiple users
         thread = threading.Thread(target = handle, args = (client,))
