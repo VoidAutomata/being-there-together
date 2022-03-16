@@ -2,10 +2,19 @@ import threading
 import socket
 import os
 
+ON_HEROKU = os.environ.get('ON_HEROKU')
+
+if ON_HEROKU:
+    # get the heroku port
+    port = int(os.environ.get('PORT', 17995))  # as per OP comments default is 17995
+else:
+    port = 3000
+
 host = '0.0.0.0'
 #host = '127.0.0.1'
 #port = 14150
-port =  socket.htons(14150)
+#port =  socket.htons(14150)
+#port = os.environ['PORT']
 #host = socket.htonl(socket.INADDR_ANY)
 #port = int(os.environ.get('PORT'))
 
