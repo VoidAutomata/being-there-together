@@ -30,7 +30,10 @@ usernames = []
 #sends message to all clients
 def broadcast(message):
     for client in clients:
-        client.send(message)
+        try:
+            client.send(message)
+        except:
+            continue
 
 
 #handles clients
